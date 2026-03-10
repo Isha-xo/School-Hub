@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>School Hub ✧</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════════════
+       MOBILE CONTROLS
+  ═══════════════════════════════════════════════════ -->
+  <button class="hamburger" id="hamburger" aria-label="Toggle menu">☰</button>
+  <div class="overlay" id="overlay"></div>
+
+
+  <!-- ══════════════════════════════════════════════════
+       SIDEBAR
+  ═══════════════════════════════════════════════════ -->
+  <aside class="sidebar" id="sidebar">
+
+    <!-- Profile / Brand -->
+    <div class="brand">
+      <div class="profile-ring">
+        <div class="profile-inner">🎀</div>
+      </div>
+      <div>
+        <div class="brand-title">School Hub ✧</div>
+        <div class="brand-sub">my study space</div>
+      </div>
+    </div>
+
+    <!-- Navigation Links -->
+    <nav>
+      <div class="nav-label">Navigation</div>
+      <ul class="nav-list">
+        <li>
+          <a class="nav-link active" href="#assignments">
+            <span class="nav-icon">📋</span> Assignments
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#courses">
+            <span class="nav-icon">📚</span> Courses
+          </a>
+        </li>
+        <li>
+          <a class="nav-link" href="#misc">
+            <span class="nav-icon">🗂️</span> Misc
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Quick Links -->
+    <div>
+      <div class="nav-label">Quick Links</div>
+      <div class="quick-links">
+        <a class="quick-pill" href="#"><span>🗓️</span> Class Schedule</a>
+        <a class="quick-pill" href="#"><span>📝</span> Study Notes</a>
+        <a class="quick-pill" href="#"><span>🔖</span> Reading List</a>
+        <a class="quick-pill" href="#"><span>🎧</span> Focus Playlist</a>
+      </div>
+    </div>
+
+    <!-- Motivational Quote -->
+    <blockquote class="quote-box">
+      "You are capable of amazing things. One small step today makes tomorrow easier."
+      <footer>— keep going ✨</footer>
+    </blockquote>
+
+  </aside>
+
+
+  <!-- ══════════════════════════════════════════════════
+       MAIN CONTENT
+  ═══════════════════════════════════════════════════ -->
+  <main class="main" id="assignments">
+
+    <!-- Top bar: page title + countdown badge -->
+    <div class="topbar">
+      <h1 class="page-title">Assignments <span>✦</span></h1>
+
+      <!-- Countdown badge — click to set a custom date -->
+      <div class="countdown-wrapper">
+        <div class="countdown-badge" id="countdown-badge" title="Click to set your break date">
+          <span class="snow" id="countdown-icon">📅</span>
+          <span id="countdown-text">Set a break date →</span>
+          <span class="edit-hint">✎</span>
+        </div>
+
+        <!-- Popover form -->
+        <div class="countdown-popover" id="countdown-popover">
+          <div class="popover-title">✦ Set Countdown Target</div>
+          <div class="popover-field">
+            <label class="field-label" for="cd-label">Label</label>
+            <input class="field-input" id="cd-label" type="text"
+                   placeholder="e.g. Spring Break" maxlength="32" />
+          </div>
+          <div class="popover-field">
+            <label class="field-label" for="cd-date">Date</label>
+            <input class="field-input" id="cd-date" type="date" />
+          </div>
+          <div class="popover-actions">
+            <button class="btn-popover-save" id="cd-save">Save</button>
+            <button class="btn-popover-cancel" id="cd-cancel">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats row -->
+    <div class="stats-row">
+      <div class="stat-chip">
+        <span class="stat-num" id="stat-total">0</span>
+        <span class="stat-lbl">Total</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num" id="stat-pending">0</span>
+        <span class="stat-lbl">To Submit</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num" id="stat-done">0</span>
+        <span class="stat-lbl">Completed</span>
+      </div>
+      <div class="stat-chip">
+        <span class="stat-num" id="stat-urgent">0</span>
+        <span class="stat-lbl">Urgent</span>
+      </div>
+    </div>
+
+    <!-- Add task form -->
+    <div class="input-card">
+      <div class="input-card-title">✏️ Add a new assignment</div>
+
+      <div class="input-row">
+        <!-- Task name -->
+        <div class="field-group" style="flex:2; min-width:200px;">
+          <label class="field-label" for="task-name">Task name</label>
+          <input class="field-input" id="task-name" type="text"
+                 placeholder="e.g. Math Chapter 5 Review…"
+                 maxlength="120" autocomplete="off" />
+        </div>
+        <!-- Due date -->
+        <div class="field-group">
+          <label class="field-label" for="task-date">Due date</label>
+          <input class="field-input" id="task-date" type="date" />
+        </div>
+      </div>
+
+      <div class="input-actions">
+        <button class="btn-add" id="btn-add">＋ Add Task</button>
+        <label class="urgent-toggle">
+          <input type="checkbox" id="urgent-check" />
+          Mark as Urgent 🔴
+        </label>
+      </div>
+    </div>
+
+    <!-- Filter buttons -->
+    <div class="filter-row">
+      <span class="filter-label">Show:</span>
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="pending">To Submit</button>
+      <button class="filter-btn" data-filter="done">Completed</button>
+    </div>
+
+    <!-- Section header -->
+    <div class="section-header">
+      <h2 class="section-title">Task List</h2>
+      <span class="section-pill" id="visible-count">0 tasks</span>
+    </div>
+
+    <!-- Task cards rendered here by script.js -->
+    <div class="task-list" id="task-list"></div>
+
+  </main>
+
+
+  <!-- JavaScript (loaded last so DOM is ready) -->
+  <script src="script.js"></script>
+
+</body>
+</html>
